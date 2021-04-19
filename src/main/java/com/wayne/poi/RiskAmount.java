@@ -1,9 +1,10 @@
-package com.wayne.doc;
+package com.wayne.poi;
 
 public class RiskAmount {
     private String risk_code;
     private String risk_amount_code;
     private String parameter_1;
+    private String formula;
 
     public String getRisk_code() {
         return risk_code;
@@ -29,12 +30,21 @@ public class RiskAmount {
         this.parameter_1 = parameter_1;
     }
 
+    public String getFormula() {
+        return formula;
+    }
+
+    public void setFormula(String formula) {
+        this.formula = formula;
+    }
+
     @Override
     public String toString() {
         return "RiskAmount{" +
                 "risk_code='" + risk_code + '\'' +
                 ", risk_amount_code='" + risk_amount_code + '\'' +
                 ", parameter_1='" + parameter_1 + '\'' +
+                ", formula='" + formula + '\'' +
                 '}';
     }
 }
