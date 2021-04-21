@@ -1,10 +1,14 @@
 package com.wayne.poi;
 
+/**
+ * @author wayne
+ */
 public class RiskAmount {
     private String risk_code;
     private String risk_amount_code;
     private String parameter_1;
     private String formula;
+    private String customer;
 
     public String getRisk_code() {
         return risk_code;
@@ -38,6 +42,14 @@ public class RiskAmount {
         this.formula = formula;
     }
 
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
     @Override
     public String toString() {
         return "RiskAmount{" +
@@ -45,6 +57,7 @@ public class RiskAmount {
                 ", risk_amount_code='" + risk_amount_code + '\'' +
                 ", parameter_1='" + parameter_1 + '\'' +
                 ", formula='" + formula + '\'' +
+                ", customer='" + customer + '\'' +
                 '}';
     }
 }
