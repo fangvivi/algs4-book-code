@@ -1,9 +1,5 @@
 package com.wayne;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
 /**
  * 一些数组元素的操作方法
  * @author wayne
@@ -42,7 +38,7 @@ public class ArrayOperate {
 
     /**
      * 复制一个数组
-     * @param arr 需要操作的数组
+     * @param arr 需要复制的数组
      * @return 新复制的数组
      */
     public double[] copyArr(double[] arr){
@@ -54,8 +50,9 @@ public class ArrayOperate {
         return copyArr;
     }
 
+
     /**
-     * 颠倒数组
+     * 颠倒数组，把参数数组进行颠倒，颠倒完以后再把这个数组返回
      * @param arr 需要操作的数组
      * @return 颠倒完的数组
      */
@@ -68,18 +65,5 @@ public class ArrayOperate {
         }
         return arr;
     }
-
-
-
-    @Test
-    public void testGetMax(){
-        double[] arrA = {3.0, 5.0, 8.0, 9.0, 19.0, 20.0};
-        double[] arrB = {2, 2.2, 8.8, 20.6};
-        System.out.println(getMax(arrA));
-        System.out.println(getAvg(arrB));
-        System.out.println(Arrays.toString(reverseArr(arrA)));
-        System.out.println(Arrays.toString(copyArr(arrB)));
-    }
-
 
 }
