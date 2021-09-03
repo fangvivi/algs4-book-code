@@ -1,18 +1,18 @@
 package com.wayne;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
  * 一些数值计算的简单算法
  * @author wayne
  */
 public class MathCalculate {
+
+    private MathCalculate() {
+    }
+
     /**
      * 计算一个整数的绝对值
-     * @param x
-     * @return
+     * @param x 需要计算的整数
+     * @return 绝对值
      */
     public static int abs(int x){
         if(x >= 0){
@@ -24,8 +24,8 @@ public class MathCalculate {
 
     /**
      * 计算一个浮点数的绝对值
-     * @param x
-     * @return
+     * @param x 需要计算的浮点数
+     * @return 绝对值
      */
     public static double abs(double x){
         if(x < 0.0){
@@ -38,17 +38,17 @@ public class MathCalculate {
     /**
      * 判断一个数是否为素数
      * 素数：大于1，只能被1和本身整除
-     * @param N
-     * @return
+     * @param n 需要判断的数
+     * @return 是否为质数，是-true，否-false
      */
-    public static boolean isPrime(int N){
-        if(N < 2){
+    public static boolean isPrime(int n){
+        if(n < 2){
             return false;
         }
-        // 如果N为合数，必定存在一个值小于或者等于N的平方根 i<= Math.sqrt(N)
-        for (int i = 2; i*i <= N; i++) {
-        // for (int i = 2; i < N; i++) {
-            if(N % i ==0 ){
+        // 如果n为合数，必定存在一个n的约数小于或者等于n的平方根 i<= Math.sqrt(N)
+        for (int i = 2; i*i <= n; i++) {
+        // for (int i = 2; i < n; i++) {
+            if(n % i ==0 ){
                 return false;
             }
         }
@@ -57,8 +57,8 @@ public class MathCalculate {
 
     /**
      * 计算平方根（牛顿迭代法）
-     * @param c
-     * @return
+     * @param c 需要进行开方的数字
+     * @return 平方根
      */
     public static double sqrt(double c)
     {
@@ -73,31 +73,18 @@ public class MathCalculate {
         return t;
     }
 
-    @Test
-    public void isPrimeTest(){
-        int a = 10;
-        int b = 5;
-        int c = 1;
-
-        assertEquals(true,isPrime(b));
-        assertEquals(false,isPrime(a));
-        assertEquals(false,isPrime(c));
+    /**
+     * 计算指定范围的调和级数
+     * @param n 范围
+     * @return 调和级数
+     */
+    public static double H(int n) {
+        double sum = 0.0;
+        for (int i = 1; i <= n; i++) {
+            sum += 1.0/i;
+        }
+        return sum;
     }
 
-    @Test
-    public void absTest(){
-        int a = 10;
-        double b = -5.5;
-        int c = -6;
-        assertEquals(10,abs(a));
-        assertEquals(5.5,abs(b));
-        assertEquals(6,abs(c));
-    }
-
-    @Test
-    public void sqrtTest(){
-        double sqrt = sqrt(7);
-        System.out.println(sqrt);
-    }
 
 }
